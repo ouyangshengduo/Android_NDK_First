@@ -1,0 +1,26 @@
+package com.oysd.android_ndk_demo001;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+	
+	private Button btnAdd,btnSub;
+	private EditText etAdd_A,etAddB,etSub_A,etSubB,etAddResult,etSubResult;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        initView();
+    }
+    
+    private void initView(){
+    	
+    }
+}

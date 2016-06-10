@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+E:\MyGitHub\Android_NDK_First\.metadata\.plugins\org.eclipse.jdt.core
+44424981.index
+44624062.index
+2380966039.index

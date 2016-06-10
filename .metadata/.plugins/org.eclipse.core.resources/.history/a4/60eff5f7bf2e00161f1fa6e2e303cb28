@@ -1,0 +1,7 @@
+package com.oysd.android_ndk_demo001;
+
+public class NDKInterface {
+	
+	public static native int Number_Add(int a , int b);
+
+}

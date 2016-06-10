@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+    <LinearLayout 
+        android:layout_height="0dp"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <EditText 
+            android:id="@+id/etAdd_A"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:hint="第一个整数"
+            android:layout_gravity="center"
+            />
+        <TextView 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="26sp"/>
+        
+        <EditText 
+            android:id="@+id/etAdd_B"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:hint="第二个整数"
+            />
+        <TextView 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="="
+            android:textSize="26sp"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

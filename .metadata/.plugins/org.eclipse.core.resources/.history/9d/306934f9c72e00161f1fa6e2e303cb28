@@ -1,0 +1,102 @@
+package com.oysd.android_ndk_demo001;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity implements OnClickListener {
+	
+	private Button btnAdd,btnSub;
+	private EditText etAdd_A,etAdd_B,etSub_A,etSub_B,etAddResult,etSubResult;
+	
+	
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        //UI控件的绑定
+        initView();
+    }
+    
+    private void initView(){
+    	
+    	btnAdd = (Button) findViewById(R.id.btn_Add);
+    	btnSub = (Button) findViewById(R.id.btn_Sub);
+    	
+    	etAdd_A = (EditText) findViewById(R.id.etAdd_A);
+    	etAdd_B = (EditText) findViewById(R.id.etAdd_B);
+    	etSub_A = (EditText) findViewById(R.id.etSub_A);
+    	etSub_B = (EditText) findViewById(R.id.etSub_B);
+    	
+    	etAddResult = (EditText) findViewById(R.id.etAddResult);
+    	etSubResult = (EditText) findViewById(R.id.etSubResult);
+    	
+    	btnAdd.setOnClickListener(this);
+    	btnSub.setOnClickListener(this);
+    	
+    }
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch(v.getId()){
+		case R.id.btn_Add:
+			if(IsRight(1)){
+				int a = Integer.parseInt(etAdd_A.getText().toString().trim());
+				int b = Integer.parseInt(etAdd_B.getText().toString().trim());
+				
+				etAddResult.setText("" + NDKInterface.Number_Add(a, b));
+				
+			}else{
+				Toast.makeText(this, "A或者B输入不能为空!", Toast.LENGTH_SHORT).show();
+			}
+			break;
+		case R.id.btn_Sub:
+			if(IsRight(2)){
+				int a = Integer.parseInt(etSub_A.getText().toString().trim());
+				int b = Integer.parseInt(etSub_B.getText().toString().trim());
+				
+				etSubResult.setText("" + NDKInterface.Number_Sub(a, b));
+			}else{
+				Toast.makeText(this, "A或者B输入不能为空!", Toast.LENGTH_SHORT).show();
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	
+	/**
+	 * 判断输入的A,B是否为空，为空
+	 * @param index  控制加、减两种模式
+	 * @return
+	 */
+	private boolean IsRight(int index){
+		switch(index){
+		case 1:
+			String Add_A = etAdd_A.getText().toString().trim();
+			String Add_B = etAdd_B.getText().toString().trim();
+			if(Add_A.equals("") || Add_B.equals("")){
+				return false;
+			}
+			break;
+		case 2:
+			String Sub_A = etSub_A.getText().toString().trim();
+			String Sub_B = etSub_B.getText().toString().trim();
+			if(Sub_A.equals("") || Sub_B.equals("")){
+				return false;
+			}
+			break;
+		}
+		return true;
+	}
+	
+}
